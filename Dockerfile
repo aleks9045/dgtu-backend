@@ -4,12 +4,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # Если проект крашнется, выведется сообщение из-за какой ошибки это произошло
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /back
-COPY app/requirements.txt .
+WORKDIR /back/
+COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
-
-RUN chmod a+x *.sh
-
-#CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

@@ -7,7 +7,6 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from alembic import context
 
 from app.auth.models import user
-from app.articles.models import file
 
 from app.config import POSTGRES_USER, PORT, POSTGRES_PASSWORD, HOST, POSTGRES_DB
 
@@ -24,7 +23,7 @@ config.set_section_option(section, "PORT", PORT)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-target_metadata = [user.metadata]
+target_metadata = user.metadata
 
 
 def run_migrations_offline() -> None:
