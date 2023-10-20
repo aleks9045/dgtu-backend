@@ -9,16 +9,16 @@ from alembic import context
 from app.auth.models import user
 from app.articles.models import file
 
-from app.config import USER, PORT, PASSWORD, HOST, DBNAME
+from app.config import POSTGRES_USER, PORT, POSTGRES_PASSWORD, HOST, POSTGRES_DB
 
 config = context.config
 
 section = config.config_ini_section
-config.set_section_option(section, "USER", USER)
-config.set_section_option(section, "PASSWORD", PASSWORD)
+config.set_section_option(section, "USER", POSTGRES_USER)
+config.set_section_option(section, "PASSWORD", POSTGRES_PASSWORD)
+config.set_section_option(section, "DBNAME", POSTGRES_DB)
 config.set_section_option(section, "HOST", HOST)
 config.set_section_option(section, "PORT", PORT)
-config.set_section_option(section, "DBNAME", DBNAME)
 
 
 if config.config_file_name is not None:
