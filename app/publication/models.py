@@ -8,7 +8,7 @@ metadata = MetaData()
 class Article(Base):
     __tablename__ = "article"
 
-    id = Column(Integer, primary_key=True)
+    id = Column(Integer, autoincrement=True, primary_key=True)
     user_name = Column(String(255), unique=True, nullable=False)
     title = Column(Text, nullable=False)
     description = Column(Text, nullable=False)
