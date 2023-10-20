@@ -1,9 +1,9 @@
 version: '3'
 
 services:
-  database:
+  db:
     image: postgres:16.0-alpine3.18
-    container_name: 'database'
+    container_name: database
     ports:
       - '5432:5432'
     environment:
@@ -11,9 +11,9 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
   backend:
-    container_name: 'backend'
+    container_name: backend
     depends_on:
-      - database
+      - db
     build: .
     ports:
       - "8000:8000"

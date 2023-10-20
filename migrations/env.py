@@ -14,9 +14,9 @@ from app.config import POSTGRES_USER, PORT, POSTGRES_PASSWORD, HOST, POSTGRES_DB
 config = context.config
 
 section = config.config_ini_section
-config.set_section_option(section, "USER", POSTGRES_USER)
-config.set_section_option(section, "PASSWORD", POSTGRES_PASSWORD)
-config.set_section_option(section, "DBNAME", POSTGRES_DB)
+config.set_section_option(section, "POSTGRES_USER", POSTGRES_USER)
+config.set_section_option(section, "POSTGRES_PASSWORD", POSTGRES_PASSWORD)
+config.set_section_option(section, "POSTGRES_DB", POSTGRES_DB)
 config.set_section_option(section, "HOST", HOST)
 config.set_section_option(section, "PORT", PORT)
 
