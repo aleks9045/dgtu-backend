@@ -21,13 +21,13 @@ services:
       - database
     volumes:
       - static_volume:/app/static
-  frontend:
-    image: node:20.8-alpine
-    container_name: 'frontend'
-    depends_on:
-      - backend
-    ports:
-      - "80:5173"
+#  frontend:
+#    image: node:20.8-alpine
+#    container_name: 'frontend'
+#    depends_on:
+#      - backend
+#    ports:
+#      - "80:5173"
 
 volumes:
   static_volume:
