@@ -17,6 +17,7 @@ services:
     build: .
     ports:
       - "8000:8000"
+    command: ["/back/script.sh"]
     volumes:
       - static_volume:/app/static
 #  frontend:
