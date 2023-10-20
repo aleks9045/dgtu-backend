@@ -7,6 +7,7 @@ metadata = MetaData()
 
 class Article(Base):
     __tablename__ = "article"
+    __table_args__ = {'extend_existing': True}
 
     id = Column(Integer, autoincrement=True, primary_key=True)
     user_name = Column(String(255), unique=True, nullable=False)

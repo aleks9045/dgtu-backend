@@ -22,12 +22,8 @@ photo_router = APIRouter(
 
 
 @photo_router.post('/add')
-async def upload_photo(email_: str, file: UploadFile = File(...), session: AsyncSession = Depends(get_async_session)):
+async def upload_photo(file: UploadFile = File(...), session: AsyncSession = Depends(get_async_session)):
     file_path = f'app/static/{file.filename}'
     async with aiofiles.open(file_path, 'wb') as out_file:
         content = await file.read()  # async read
         await out_file.write(content)  # async write
-    statement = insert(user).values(photo=file_path).where(user.c.email) == email_
-    await session.execute(statement)
-    await session.commit()
-    return {"Result": "OK"}
