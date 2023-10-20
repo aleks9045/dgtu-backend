@@ -4,10 +4,12 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # Если проект крашнется, выведется сообщение из-за какой ошибки это произошло
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /app
+WORKDIR /back
 COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt && alembic revision --autogenerate && alembic upgrade head
+RUN pip install --no-cache-dir -r requirements.txt && alembic upgrade head
 
 COPY .. .
+
+RUN alembic upgrade head && cd app/
 
 CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
