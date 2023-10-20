@@ -6,12 +6,10 @@ services:
     container_name: 'database'
     ports:
       - '5432:5432'
-    env_file:
-      - .env
-#    environment:
-#      - POSTGRES_DB=postgres
-#      - POSTGRES_USER=postgres
-#      - POSTGRES_PASSWORD=password
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
   backend:
     container_name: 'backend'
     build: .
