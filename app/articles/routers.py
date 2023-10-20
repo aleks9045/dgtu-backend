@@ -2,8 +2,8 @@ from fastapi import APIRouter, Depends, UploadFile
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from database import get_async_session
-from articles.models import file
+from app.database import get_async_session
+from app.articles.models import file
 
 router = APIRouter(
     prefix="/articles",

@@ -1,5 +1,4 @@
 from sqlalchemy import Table, Column, MetaData, Integer, LargeBinary
-from sqlalchemy.dialects.postgresql import BYTEA
 
 metadata = MetaData()
 
