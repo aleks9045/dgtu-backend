@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 from app.auth.schemas import UserRead, UserCreate, UserUpdate
 from app.auth.routers import fastapi_users, auth_backend
 from app.articles.routers import router as articles_router
+from app.auth.routers import photo_router
+from app.publication.routers import router as publ_router
 
 app = FastAPI(title='My app')
 
@@ -44,5 +46,12 @@ app.include_router(
 )
 
 app.include_router(
-    articles_router,
+    articles_router
 )
+
+app.include_router(
+    publ_router
+)
+# app.include_router(
+#     photo_router
+# )
