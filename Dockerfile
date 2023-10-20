@@ -4,7 +4,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # Если проект крашнется, выведется сообщение из-за какой ошибки это произошло
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /app
+WORKDIR /back
 COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
