@@ -24,7 +24,7 @@ config.set_section_option(section, "PORT", PORT)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-target_metadata = [user.metadata, file.metadata]
+target_metadata = [user.metadata]
 
 
 def run_migrations_offline() -> None:
