@@ -4,11 +4,11 @@ ENV PYTHONDONTWRITEBYTECODE 1
 # Если проект крашнется, выведется сообщение из-за какой ошибки это произошло
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /back
-COPY requirements.txt .
+WORKDIR /app
+COPY app/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY ../ .
+COPY . .
 
 RUN alembic upgrade head && cd app/
 
