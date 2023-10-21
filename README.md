@@ -31,7 +31,9 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 ## Launch in docker
 ```
-docker-compose up --build
+docker-compose up --build -d
+cd dgtu2023-frontend
+docker-compose up --build -d
 ```
 ## http://your_host:8000/docs - swagger ui
 # Used technologies
