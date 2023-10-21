@@ -41,3 +41,71 @@ docker-compose up --build
 ### [Alembic](https://alembic.sqlalchemy.org/en/latest/)
 ### [Pydantic](https://docs.pydantic.dev/latest/)
 ### [PostgreSQL](https://www.postgresql.org/)
+
+# API Documentation
+###1. http://your_host:8000/articles/all - returns all articles (get)
+```
+{
+  "status": "success",
+  "data": [
+    {
+      "title": "string",
+      "description": "string",
+      "theme": "string",
+      "date": "2023-10-21 12:59:07.275",
+      "user_name": "string",
+      "id": 1,
+      "file_name": null
+    },
+    {
+      "title": "string",
+      "description": "string",
+      "theme": "string",
+      "date": "2023-10-21 13:42:26.022",
+      "user_name": "string",
+      "id": 3,
+      "file_name": null
+    }
+  ],
+  "details": null
+}
+```
+###2. http://your_host:8000/articles/add_article - add article (post) 
+input
+```
+{
+  "user_name": "string",
+  "title": "string",
+  "description": "string",
+  "date": "string",
+  "theme": "string",
+  "file_name": "string" 
+}
+```
+output
+```
+{
+  "status": "success"
+}
+```
+###3. http://your_host:8000/articles/add_photo - add photo
+input
+```
+file
+```
+
+output
+```
+{
+  "status": "success"
+}
+```
+###4. http://your_host:8000/articles/get_photo - get photo
+input
+```
+article_id
+```
+output 
+```
+file
+```
