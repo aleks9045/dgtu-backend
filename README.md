@@ -108,6 +108,11 @@ file
 "article_id": 1
 }
 ```
+## Test API 
+```
+pytest -v -s tests/
+```
+
 #### output 
 ```
 devops.jpg
