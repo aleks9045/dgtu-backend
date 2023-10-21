@@ -52,3 +52,5 @@ urllib3==2.0.6
 uvicorn==0.22.0
 watchfiles==0.19.0
 websockets==11.0.3
+pytest==7.4.2
+pytest-asyncio==0.21.1
