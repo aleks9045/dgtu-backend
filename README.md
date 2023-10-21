@@ -114,7 +114,18 @@ file
 file_name.jpg
 ```
 
-# Test API 
+## Test API 
+### .env (must be in root directory)
+```
+POSTGRES_DB_TEST=
+POSTGRES_USER_TEST=
+POSTGRES_PASSWORD_TEST=
+HOST_TEST=
+PORT=""
+SECRET_MANAGER=_TEST""
+SECRET_JWT_TEST=""
+```
+### start tests
 ```
 pytest -v -s tests/
 ```
