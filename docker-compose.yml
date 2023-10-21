@@ -21,7 +21,7 @@ services:
     ports:
       - "8000:8000"
     command: >
-      /bin/sh -c "alembic revision --autogenerate -m "creation" && alembic upgrade head &&
+      /bin/sh -c "alembic revision --autogenerate -m "creation" && sleep 1 && alembic upgrade head &&
       uvicorn app.main:app --host 0.0.0.0 --port 8000"
     volumes:
       - static_volume:/app/static
