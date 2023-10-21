@@ -10,8 +10,8 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    volumes:
-      - db_volume:/var/lib/postgresql/data
+#    volumes:
+#      - db_volume:/var/lib/postgresql/data
   backend:
     container_name: backend
     depends_on:
@@ -35,4 +35,4 @@ services:
 
 volumes:
   static_volume:
-  db_volume:
+#  db_volume:
