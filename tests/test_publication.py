@@ -1,7 +1,7 @@
 import pytest
 from sqlalchemy import insert, select
 
-from publication.models import Article
+from app.publication.models import Article
 from conftest import client, async_session_maker
 
 
