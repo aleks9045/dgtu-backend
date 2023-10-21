@@ -65,7 +65,7 @@ docker-compose up --build
       "date": "10.11.2005",
       "user_name": "aleks",
       "id": 2,
-      "file_name": "devops.jpg"
+      "file_name": "file.name.jpg"
     }
   ],
   "details": null
@@ -111,7 +111,7 @@ file
 
 #### output 
 ```
-devops.jpg
+file_name.jpg
 ```
 
 # Test API 
