@@ -8,7 +8,8 @@ from app.publication.routers import router as publ_router
 app = FastAPI(title="Swagger UI")
 
 origins = [
-    "http://127.0.0.1"
+    "http://localhost",
+    "http://90.156.210.55"
 ]  # Сервера, которые могут отправлять запросы на Backend
 
 app.add_middleware(
