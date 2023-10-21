@@ -52,19 +52,19 @@ docker-compose up --build
       "title": "string",
       "description": "string",
       "theme": "string",
-      "date": "2023-10-21 12:59:07.275",
+      "date": "10.10.2005",
       "user_name": "string",
       "id": 1,
-      "file_name": null
+      "file_name": "string"
     },
     {
       "title": "string",
       "description": "string",
       "theme": "string",
-      "date": "2023-10-21 13:42:26.022",
+      "date": "10.10.2005",
       "user_name": "string",
       "id": 3,
-      "file_name": null
+      "file_name": "string"
     }
   ],
   "details": null
@@ -109,3 +109,4 @@ output
 ```
 file
 ```
+
