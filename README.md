@@ -1,5 +1,5 @@
 # FastApi project
-### Frontend docs: https://github.com/inpanica/dgtuHACK-2023-Frontend
+### Frontend docs: https://github.com/inpanica/dgtu2023-frontend
 ## .env (must be in root directory)
 ```
 POSTGRES_DB=
