@@ -15,4 +15,4 @@ class Article(Base):
     description = Column(Text, nullable=True)
     date = Column(TIMESTAMP)
     theme = Column(String(255))
-    file_name = Column(Text)
+    file_name = Column(Text, nullable=True)
