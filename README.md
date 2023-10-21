@@ -88,7 +88,7 @@ output
   "status": "success"
 }
 ```
-### 3. http://your_host:8000/articles/add_photo - add photo
+### 3. http://your_host:8000/articles/add_photo - add photo (post)
 input
 ```
 file
@@ -100,7 +100,7 @@ output
   "status": "success"
 }
 ```
-### 4. http://your_host:8000/articles/get_photo - get photo
+### 4. http://your_host:8000/articles/get_photo - get photo (get)
 input
 ```
 article_id
