@@ -10,7 +10,7 @@ from sqlalchemy.pool import NullPool
 
 from app.database import get_async_session
 from app.publication.models import metadata
-from src.config import (DB_HOST_TEST, DB_NAME_TEST, DB_PASS_TEST, DB_PORT_TEST,
+from app.config import (DB_HOST_TEST, DB_NAME_TEST, DB_PASS_TEST, DB_PORT_TEST,
                          DB_USER_TEST)
 from app.main import app
 
