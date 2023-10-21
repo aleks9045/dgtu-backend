@@ -15,3 +15,4 @@ class Article(Base):
     description = Column(Text, nullable=False)
     date = Column(TIMESTAMP)
     theme = Column(String(255))
+    path_photo = Column(String, nullable=True)

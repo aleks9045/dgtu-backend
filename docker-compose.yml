@@ -10,8 +10,6 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-#    volumes:
-#      - db_volume:/var/lib/postgresql/data
   backend:
     container_name: backend
     depends_on:
@@ -21,18 +19,13 @@ services:
     ports:
       - "8000:8000"
     command: >
-      /bin/sh -c "alembic revision --autogenerate -m "creation" && alembic upgrade head &&
+      /bin/sh -c "alembic revision --autogenerate && alembic upgrade head &&
       uvicorn app.main:app --host 0.0.0.0 --port 8000"
-    volumes:
-      - static_volume:/app/static
-#  frontend:
-#    image: node:20.8-alpine
-#    container_name: 'frontend'
-#    depends_on:
-#      - backend
-#    ports:
-#      - "80:5173"
-
-volumes:
-  static_volume:
-#  db_volume:
+  frontend:
+    build: dgtuHACK-2023-Frontend/
+    container_name: frontend
+    depends_on:
+      - backend
+      - db
+    ports:
+      - "80:80"

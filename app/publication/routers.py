@@ -1,6 +1,7 @@
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, insert
+import aiofiles
 
 from app.database import get_async_session
 from app.publication.models import Article
@@ -30,10 +31,3 @@ async def get_all_articles(session: AsyncSession = Depends(get_async_session)):
             "details": None
         })
 
-
-@router.post('/add')
-async def add_article(new_article: article_schema, session: AsyncSession = Depends(get_async_session)):
-    stmt = insert(Article).values(**new_article.dict())
-    await session.execute(stmt)
-    await session.commit()
-    return {"status": "success"}
