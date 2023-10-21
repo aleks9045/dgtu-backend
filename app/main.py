@@ -5,7 +5,7 @@ from app.auth.routers import fastapi_users, auth_backend
 from app.auth.schemas import UserRead, UserCreate, UserUpdate
 from app.publication.routers import router as publ_router
 
-app = FastAPI(title='My app')
+app = FastAPI(title="Swagger UI")
 
 origins = [
     "*"
