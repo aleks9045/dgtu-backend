@@ -1,4 +1,5 @@
 # FastApi project
+### Frontend docs: https://github.com/inpanica/dgtuHACK-2023-Frontend
 ## .env (must be in root directory)
 ```
 POSTGRES_DB=
@@ -32,4 +33,11 @@ uvicorn app.main:app --host 0.0.0.0 --port 8000
 ```
 docker-compose up --build
 ```
-## http://your_host:8000/docs - all endpoints
+## http://your_host:8000/docs - swagger ui
+# Used technologies
+### [FastApi](https://fastapi.tiangolo.com/)
+### [FastApi Users](https://fastapi-users.github.io/fastapi-users/12.1/)
+### [Sqlalchemy](https://www.sqlalchemy.org/)
+### [Alembic](https://alembic.sqlalchemy.org/en/latest/)
+### [Pydantic](https://docs.pydantic.dev/latest/)
+### [PostgreSQL](https://www.postgresql.org/)
