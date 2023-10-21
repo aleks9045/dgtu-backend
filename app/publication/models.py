@@ -1,4 +1,4 @@
-from sqlalchemy import Column, MetaData, Integer, String, Text, TIMESTAMP
+from sqlalchemy import Column, MetaData, Integer, String, Text
 
 from app.database import Base
 
@@ -13,6 +13,6 @@ class Article(Base):
     user_name = Column(String(255), nullable=False)
     title = Column(Text, nullable=False)
     description = Column(Text, nullable=True)
-    date = Column(TIMESTAMP)
+    date = Column(String(255))
     theme = Column(String(255))
     file_name = Column(Text, nullable=True)

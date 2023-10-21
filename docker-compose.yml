@@ -10,8 +10,8 @@ services:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    networks:
-      - main
+#    networks:
+#      - main
   backend:
     container_name: backend
     depends_on:
@@ -22,31 +22,30 @@ services:
     command: >
       /bin/sh -c "alembic revision --autogenerate && alembic upgrade head &&
       uvicorn app.main:app --host 0.0.0.0 --port 8000"
-    networks:
-      - main
-#  nginx_backend:
-#    container_name: nginx
 #    networks:
-#      - custom
+#      - main
+#  nginx:
+#    container_name: nginx
+#    depends_on:
+#      - db
+#      - backend
+#    build: nginx/
 #    links:
 #      - backend
-#    depends_on:
-#      - backend
-#      - db
-#    build: nginx/
 #    ports:
 #      - "8001:80"
-  frontend:
-    build: dgtu2023-frontend/
-    container_name: frontend
-    depends_on:
-      - backend
-      - db
-    links:
-      - backend
-    ports:
-      - "80:80"
-    networks:
-      - main
-networks:
-   main:
+#    networks:
+#      - main
+#  frontend:
+#    build: .
+#    container_name: frontend
+#    depends_on:
+#      - db
+#      - backend
+#      - nginx
+#    ports:
+#      - "80:80"
+#    networks:
+#      - main
+#networks:
+#   main:
