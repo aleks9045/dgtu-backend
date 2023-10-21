@@ -43,6 +43,7 @@ docker-compose up --build
 ### [PostgreSQL](https://www.postgresql.org/)
 
 # API Documentation
+## Publications service
 ### 1. http://your_host:8000/articles/all - returns all articles (get)
 ```
 {
@@ -58,20 +59,20 @@ docker-compose up --build
       "file_name": "string"
     },
     {
-      "title": "string",
-      "description": "string",
-      "theme": "string",
-      "date": "10.10.2005",
-      "user_name": "string",
-      "id": 3,
-      "file_name": "string"
+      "title": "cool title",
+      "description": "my_desc",
+      "theme": "sky",
+      "date": "10.11.2005",
+      "user_name": "aleks",
+      "id": 2,
+      "file_name": "devops.jpg"
     }
   ],
   "details": null
 }
 ```
 ### 2. http://your_host:8000/articles/add_article - add article (post) 
-input
+#### input
 ```
 {
   "user_name": "string",
@@ -82,31 +83,33 @@ input
   "file_name": "string" 
 }
 ```
-output
+#### output
 ```
 {
   "status": "success"
 }
 ```
-### 3. http://your_host:8000/articles/add_photo - add photo (post)
-input
+### 3. http://your_host:8000/articles/add_photo - add photo
+#### input
 ```
 file
 ```
 
-output
+#### output
 ```
 {
   "status": "success"
 }
 ```
-### 4. http://your_host:8000/articles/get_photo - get photo (get)
-input
+### 4. http://your_host:8000/articles/get_photo - get photo
+#### input
 ```
-article_id
+{
+"article_id": 1
+}
 ```
-output 
+#### output 
 ```
-file
+devops.jpg
 ```
 
