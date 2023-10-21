@@ -1,13 +1,13 @@
 import asyncio
 from logging.config import fileConfig
 
+from alembic import context
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
-from alembic import context
-from app.database import Base
 
 from app.config import POSTGRES_USER, PORT, POSTGRES_PASSWORD, HOST, POSTGRES_DB
+from app.database import Base
 
 config = context.config
 
@@ -17,7 +17,6 @@ config.set_section_option(section, "POSTGRES_PASSWORD", POSTGRES_PASSWORD)
 config.set_section_option(section, "POSTGRES_DB", POSTGRES_DB)
 config.set_section_option(section, "HOST", HOST)
 config.set_section_option(section, "PORT", PORT)
-
 
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)

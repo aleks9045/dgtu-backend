@@ -1,16 +1,14 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.auth.schemas import UserRead, UserCreate, UserUpdate
 from app.auth.routers import fastapi_users, auth_backend
-from app.articles.routers import router as articles_router
-from app.auth.routers import photo_router
+from app.auth.schemas import UserRead, UserCreate, UserUpdate
 from app.publication.routers import router as publ_router
 
 app = FastAPI(title='My app')
 
 origins = [
-    "http://localhost:8000"
+    "*"
 ]
 
 app.add_middleware(
@@ -18,7 +16,7 @@ app.add_middleware(
     allow_origins=origins,
     allow_credentials=True,
     allow_methods=["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allow_headers=["Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Set-cookie"]
+    allow_headers=["Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Methods", "Authorization"]
 )
 
 app.include_router(
@@ -40,18 +38,5 @@ app.include_router(
 )
 
 app.include_router(
-    fastapi_users.get_reset_password_router(),
-    prefix="/auth",
-    tags=["auth"],
-)
-
-app.include_router(
-    articles_router
-)
-
-app.include_router(
     publ_router
 )
-# app.include_router(
-#     photo_router
-# )
