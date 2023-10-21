@@ -2,4 +2,3 @@
 venv
 .git
 .gitignore
-docker-compose.yml

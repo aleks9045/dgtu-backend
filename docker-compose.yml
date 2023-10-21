@@ -37,7 +37,7 @@ services:
 #    ports:
 #      - "8001:80"
   frontend:
-    build: dgtuHACK-2023-Frontend/
+    build: dgtu2023-frontend/
     container_name: frontend
     depends_on:
       - backend
