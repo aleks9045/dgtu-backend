@@ -52,9 +52,9 @@ async def upload_photo(file: UploadFile = File(...)):
 
 
 @router.get('/get_photo')
-async def photo(article_id: int, session: AsyncSession = Depends(get_async_session)):
+async def photo(title: str, session: AsyncSession = Depends(get_async_session)):
     try:
-        query = select(Article.file_name).where(Article.id == article_id)
+        query = select(Article.file_name).where(Article.title == title)
         result = await session.execute(query)
         file_name = result.scalars().all()[0]
         return FileResponse(path=f'static/{file_name}', filename=f'{file_name}', media_type='multipart/form-data')
@@ -63,5 +63,5 @@ async def photo(article_id: int, session: AsyncSession = Depends(get_async_sessi
         raise HTTPException(status_code=501, detail={
             "status": "error",
             "data": None,
-            "details": "no article with and photo with this id"
+            "details": "no article with and photo with this title"
         })
