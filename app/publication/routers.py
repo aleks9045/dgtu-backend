@@ -58,7 +58,7 @@ async def photo(title: str, session: AsyncSession = Depends(get_async_session)):
         query = select(Article.file_name).where(Article.title == title)
         result = await session.execute(query)
         file_name = result.scalars().all()[0]
-        return FileResponse(path=f'static/{file_name}', filename=f'{file_name}', media_type='image/png')
+        return FileResponse(path=f'static/{file_name}', filename=f'{file_name}', media_type='application/octet-stream')
 
     except Exception:
         raise HTTPException(status_code=501, detail={
