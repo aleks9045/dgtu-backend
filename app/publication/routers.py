@@ -2,7 +2,8 @@ import aiofiles
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File
 from sqlalchemy import select, insert
 from sqlalchemy.ext.asyncio import AsyncSession
-from starlette.responses import FileResponse
+# from starlette.responses import FileResponse
+from fastapi.responses import FileResponse
 
 from app.database import get_async_session
 from app.publication.models import Article
@@ -57,7 +58,6 @@ async def photo(title: str, session: AsyncSession = Depends(get_async_session)):
         query = select(Article.file_name).where(Article.title == title)
         result = await session.execute(query)
         file_name = result.scalars().all()[0]
-        print(file_name)
         return FileResponse(path=f'static/{file_name}', filename=f'{file_name}', media_type='multipart/form-data')
 
     except Exception:
