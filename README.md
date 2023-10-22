@@ -35,14 +35,14 @@ docker-compose up --build -d
 cd dgtu2023-frontend
 docker-compose up --build -d
 ```
-## http://your_host:8000/docs - swagger ui
-# Used technologies
-### [FastApi](https://fastapi.tiangolo.com/)
-### [FastApi Users](https://fastapi-users.github.io/fastapi-users/12.1/)
-### [Sqlalchemy](https://www.sqlalchemy.org/)
-### [Alembic](https://alembic.sqlalchemy.org/en/latest/)
-### [Pydantic](https://docs.pydantic.dev/latest/)
-### [PostgreSQL](https://www.postgresql.org/)
+# http://90.156.210.55:8000/docs#/ - swagger ui (backend documentaion)
+## Used technologies
+#### [FastApi](https://fastapi.tiangolo.com/)
+#### [FastApi Users](https://fastapi-users.github.io/fastapi-users/12.1/)
+#### [Sqlalchemy](https://www.sqlalchemy.org/)
+#### [Alembic](https://alembic.sqlalchemy.org/en/latest/)
+#### [Pydantic](https://docs.pydantic.dev/latest/)
+#### [PostgreSQL](https://www.postgresql.org/)
 
 # API Documentation
 ## Publications service
@@ -115,7 +115,12 @@ file
 ```
 file_name.jpg
 ```
-## Test API 
+## Publications service
+### The order of requests, the body of requests see at http://90.156.210.55:8000/docs#/
+#### 1. http://90.156.210.55:8000/auth/register
+#### 2. http://90.156.210.55:8000/auth/jwt/login
+#### 3. http://90.156.210.55:8000/users/me (with Authorization header)
+# Test API
 ## .env (must be in root directory)
 ```
 POSTGRES_DB_TEST=
