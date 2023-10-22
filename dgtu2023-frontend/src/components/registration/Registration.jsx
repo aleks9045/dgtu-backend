@@ -18,7 +18,7 @@ function Registration({setUser, ...props}) {
         <div className="block">
             <div className="ctn">
                 <h2 className="h2-title">Регистрация</h2>
-                <CallbackForm buttonFunction={reg} buttonText={'Подтвердить'} inputs={{ 'Name': 'Имя', 'Email': 'Почта', 'Password': 'Пароль' }} photoRequired={false} />
+                <CallbackForm buttonFunction={reg} buttonText={'Подтвердить'} inputs={{ 'Name': 'Имя', 'Email': 'Почта', 'Password': 'Пароль (минимум 8 символов)' }} photoRequired={false} />
             </div>
         </div>
     )
